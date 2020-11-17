@@ -1,8 +1,9 @@
 package zajecia3;
 import java.awt.*;
+import java.awt.GridLayout;
 import java.awt.event.*;
 import javax.swing.*;
-
+import java.util.EventObject;
 
 	public class Ramka  extends JFrame implements ActionListener{
 		// private JButton przycisk; zamiast 
@@ -17,7 +18,7 @@ import javax.swing.*;
 			GridLayout layout= new GridLayout(1, 3);
 			setLayout(layout);
 			
-			JButton przycisk=new JButton("Klikaæ na w³asne ryzyko"); 
+			JButton przycisk=new JButton("KlikaÄ‡ na wÅ‚asne ryzyko"); 
 			JButton przycisk2=new JButton("Nowy");
 			textField = new JTextField();
 			add(przycisk);
@@ -29,13 +30,20 @@ import javax.swing.*;
 			add(textField);
 			przycisk2.addActionListener(this:: actionPerformed);
 			
+			 przycisk.addActionListener(new ActionListener() {
+					@Override
+					public void actionPerformed(ActionEvent e) {
+					textField.setText("DziaÅ‚a! Jestem genialny!");
+					}
+				}); 
 			
-			/* przycisk2.addActionListener(new ActionListener() {
+			
+			 przycisk2.addActionListener(new ActionListener() {
 				@Override
 				public void actionPerformed(ActionEvent e) {
-				textField.setText("Klikniête!");
+				textField.setText("KlikniÄ™te!");
 				}
-			}); */
+			}); 
 				
 			
 			pack();
@@ -45,9 +53,9 @@ import javax.swing.*;
 				
 			Object o = o.getSource();
 			if(o== przycisk) {
-				JOptionPane.showMessageDialog(null, "Dzia³a! Jestem genialny!");
+				JOptionPane.showMessageDialog(null, "DziaÅ‚a! Jestem genialny!");
 			}else if(o==przycisk2){
-				textField.setText("Klikniête!");
+				textField.setText("KlikniÄ™te!");
 			}
 			
 			}
@@ -55,6 +63,11 @@ import javax.swing.*;
 		}
 		
 	
+	
+		
+
+
+
 	
 		
 
